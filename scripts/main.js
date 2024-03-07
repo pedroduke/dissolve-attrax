@@ -1,4 +1,3 @@
-// Selection of HTML objects
 const mobile = document.querySelector('.header__nav__mobile i');
 const nav = document.querySelector('.header__nav__list');
 const items = document.querySelectorAll('.header__nav__item');
@@ -9,7 +8,6 @@ const span = document.querySelector(".modal__close");
 const nameValue = document.querySelector('.modal__title');
 const inputValue = document.querySelector('.modal__input');
 
-// Defining a function
 function toggleNav() {
   mobile.classList.toggle('fa-bars');
   mobile.classList.toggle('fa-times');
@@ -31,24 +29,18 @@ function toggleNav() {
   });
 }
 
-// 
-
-// Calling the function after click event occurs
 mobile.addEventListener('click', function() {
     toggleNav();
 });
 
-// When the user clicks the button, open the modal 
 btnRegister.onclick = function() {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";

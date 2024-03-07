@@ -13,7 +13,13 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 16px;
+}
+
+body {
+  font-family: "Opensans Variable";
+  font-size: 18px;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
 }
 
 *, *:before, *:after {
@@ -31,13 +37,6 @@ ol, ul {
   list-style: none;
 }
 
-body {
-  font-family: "Opensans Variable";
-  font-size: 18px;
-  font-weight: 400;
-  font-variation-settings: "wght" 400;
-}
-
 h1 {
   font-family: "Ubuntu Medium";
   font-size: 25px;
@@ -47,6 +46,12 @@ h1 {
 h2 {
   font-family: "Ubuntu Regular";
   font-size: 20px;
+  font-weight: 400;
+}
+
+label {
+  font-family: "Ubuntu Regular";
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -290,7 +295,7 @@ h2 {
   width: -moz-fit-content;
   width: fit-content;
   font-family: "Ubuntu Regular";
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   background-color: white;
   border: 2px solid #F36F21;
@@ -349,7 +354,7 @@ h2 {
   width: -moz-fit-content;
   width: fit-content;
   font-family: "Ubuntu Regular";
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   background-color: white;
   border: 2px solid #F36F21;
@@ -368,27 +373,31 @@ h2 {
   width: 90%;
   height: 50vh;
   display: grid;
-  grid-template-rows: 1fr 1fr; /*you can use px, %, auto etc. here*/
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "left-top right-item" "left-bottom right-item";
   grid-gap: 15px;
   margin: 20px 0;
 }
 .hero__info-img-1 {
+  visibility: hidden;
+  display: none;
+}
+.hero__info-img-2 {
   grid-area: left-top;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
-.hero__info-img-2 {
+.hero__info-img-3 {
   grid-area: left-bottom;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
   height: 100%;
 }
-.hero__info-img-3 {
+.hero__info-img-4 {
   grid-area: right-item;
   -o-object-fit: cover;
      object-fit: cover;
@@ -397,21 +406,19 @@ h2 {
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  padding-top: 25vh; /* Location of the box */
+  display: none;
+  position: fixed;
+  padding-top: 25vh;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
   -webkit-backdrop-filter: blur(3.5px);
           backdrop-filter: blur(3.5px);
   z-index: 20;
   color: white;
-  /* Modal Content */
-  /* The Close Button */
 }
 .modal__content {
   background-color: #F36F21;
@@ -421,15 +428,9 @@ h2 {
   height: 35vh;
 }
 .modal__title {
-  font-family: "Ubuntu Medium";
-  font-size: 20px;
-  font-weight: 500;
   margin: 50px 0 20px 0;
 }
 .modal__label {
-  font-family: "Ubuntu Medium";
-  font-size: 12px;
-  font-weight: 500;
   margin-left: 15px;
 }
 .modal__input {
@@ -451,4 +452,222 @@ h2 {
 .modal__close:hover, .modal__close:focus {
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-family: "Ubuntu Medium";
+    font-size: 40px;
+    font-weight: 500;
+  }
+  h2 {
+    font-family: "Ubuntu Regular";
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .header {
+    height: 70px;
+  }
+  .header__menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .header__nav {
+    margin-right: 0;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-family: "Opensans Variable";
+    font-size: 16px;
+    font-variation-settings: "wght" 600;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .header__nav__list {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 30%;
+    background-color: transparent;
+    color: black;
+    width: 100%;
+    height: auto;
+    top: auto;
+  }
+  .header__nav__item {
+    list-style: none;
+    margin: 0 20px;
+  }
+  .header__nav__item a {
+    color: inherit;
+    text-decoration: inherit;
+    -webkit-transition: border-bottom 400ms ease;
+    transition: border-bottom 400ms ease;
+  }
+  .header__nav__item a:hover {
+    border-bottom: 4px solid black;
+  }
+  .header__nav__mobile {
+    display: none;
+  }
+  .header img {
+    width: 55px;
+    height: 55px;
+  }
+  .header__icons i {
+    font-size: 1em;
+  }
+  .hero__intro {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 55vh;
+  }
+  .hero__intro-img {
+    width: 100%;
+    position: relative;
+  }
+  .hero__intro-img-square {
+    width: 55%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+  }
+  .hero__intro-img-1 {
+    width: 60%;
+    height: 60%;
+    visibility: visible;
+    display: block;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+    z-index: 2;
+  }
+  .hero__intro-img-2 {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    left: 70%;
+    top: 65%;
+  }
+  .hero__intro-hello {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    margin: 20px;
+  }
+  .hero__intro-hello-text {
+    font-family: "Ubuntu Regular";
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .hero__intro-hello-btn {
+    font-family: "Ubuntu Regular";
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .hero__info {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 45vh;
+  }
+  .hero__info-hello {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    padding: 60px;
+  }
+  .hero__info-hello-title {
+    width: 90%;
+  }
+  .hero__info-hello-text {
+    width: 80%;
+  }
+  .hero__info-img {
+    width: 80%;
+    height: 35vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "left-item center-top right-item" "left-item center-bottom right-item";
+    grid-gap: 15px;
+    margin: 30px 30px 30px 0;
+  }
+  .hero__info-img-1 {
+    visibility: visible;
+    display: block;
+    grid-area: left-item;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .hero__info-img-2 {
+    grid-area: center-top;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .hero__info-img-3 {
+    grid-area: center-bottom;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .hero__info-img-4 {
+    grid-area: right-item;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .modal__content {
+    width: 60%;
+  }
+  .modal__close {
+    font-size: 32px;
+  }
+  .modal__title {
+    margin: 60px 0 40px 50px;
+    margin-left: 10%;
+  }
+  .modal__label {
+    margin-left: 12%;
+  }
+  .modal__input {
+    height: 50px;
+    font-size: 18px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
 }/*# sourceMappingURL=style.css.map */
