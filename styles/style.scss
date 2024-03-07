@@ -1,0 +1,455 @@
+$primary-color: #F36F21;
+$secondary-color: #ECECEC;
+
+@font-face {
+  font-family: 'Ubuntu Medium';
+  src: url('/fonts/Ubuntu-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ubuntu Regular';
+  src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Opensans Variable';
+  src: url('/fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype-variations');
+}
+
+// CSS Reset
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Opensans Variable';
+  font-size: 18px;
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+}
+
+h1 {
+  font-family: 'Ubuntu Medium';
+  font-size: 25px;
+  font-weight: 500;
+}
+
+h2 {
+  font-family: 'Ubuntu Regular';
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+  box-shadow: 0 2px 10px 0 #00000026;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &__container {
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img {
+    width: 39px;
+    height: 39px;
+  }
+
+  &__menu {
+    gap: 30px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__nav {
+    font-family: 'Opensans Variable';
+    font-size: 20px;
+    font-variation-settings: "wght" 600;
+    margin-right: 30px;
+    
+    &__list {
+      margin: 0;
+      background: $primary-color;
+      color: white;
+      position: absolute;
+      // right: 0;
+      top: 60px;
+      width: 100%;
+      height: calc(100vh - 60px);
+      flex-direction: column;
+      justify-content: start;
+      padding: 0;
+      transition: all 400ms;
+      z-index: 10;
+      display: none;
+    }
+
+    &__item {
+      text-align: center;
+      margin-top: 60px;
+      top: 0;
+      right: 0;
+      transition: all 400ms;
+
+      &:hover {
+        top: -10px;
+        font-size: 1.1em;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: inherit;
+        transition: border-bottom 400ms ease;
+
+        &:hover {
+          border-bottom: 4px solid white;
+        }
+      }
+    }
+
+    &__mobile {
+      display: block;
+
+      i {
+        font-size: 2em;
+      }
+    }
+  }
+
+  &__icons {
+    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    i {
+      font-size: 2em;
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes hide {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+
+.nav-active-item {
+  right: -100%;
+}
+
+.nav-active {
+  right: 0;
+  animation: show .6s;
+}
+
+.nav-desactive {
+  right: -100%;
+  animation: hide .6s;
+}
+
+.fixed-position {
+  position: fixed;
+}
+
+.hero {
+
+  &__intro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-img {
+      width: 100%;
+      height: 50vh;
+      position: relative;
+  
+      &-square {
+        width: 90%;
+        height: 70%;
+        position: absolute;
+        margin: 0;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $primary-color;
+      }
+  
+      &-1 {
+        visibility: hidden;
+        clear: both;
+        display: none;
+      }
+  
+      &-2 {
+        width: 75%;
+        height: 80%;
+        position: absolute;
+        margin: 0;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        box-shadow: -2px 2px 5px 2px #00000026;
+        z-index: 2;
+      }
+    }
+
+    &-hello {
+      width: 90%;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      &-title {
+        line-height: 1.6em;
+        letter-spacing: .02em;
+        margin-bottom: 20px;
+      }
+  
+      &-text {
+        line-height: 1.5em;
+        letter-spacing: .02em;
+        margin-bottom: 20px;
+      }
+  
+      &-btn {
+        width: fit-content;
+        font-family: 'Ubuntu Regular';
+        font-size: 14px;
+        font-weight: 400;
+        background-color: white;
+        border: 2px solid $primary-color;
+        border-radius: 100px;
+        padding: 10px 22px 10px 22px;
+        gap: 10px;
+        margin: 10px 0;
+  
+        &:hover {
+          background-color: $primary-color;
+          box-shadow: 0px 4px 4px 0px #00000026;
+          transition: background-color .1s ease-in;
+        }
+      }
+    }
+  }
+
+  &__info {
+    height: 105vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $secondary-color;
+
+    &-hello {
+      width: 90%;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-title {
+        line-height: 1.6em;
+        letter-spacing: .02em;
+        margin: 20px 0;
+      }
+
+      &-text {
+        line-height: 1.5em;
+        letter-spacing: .02em;
+        margin-bottom: 20px;
+      }
+
+      &-btn {
+        width: fit-content;
+        font-family: 'Ubuntu Regular';
+        font-size: 14px;
+        font-weight: 400;
+        background-color: white;
+        border: 2px solid $primary-color;
+        border-radius: 100px;
+        padding: 10px 22px 10px 22px;
+        gap: 10px;
+  
+        &:hover {
+          background-color: $primary-color;
+          box-shadow: 0px 4px 4px 0px #00000026;
+          transition: background-color .1s ease-in;
+        }
+      }
+    }
+
+    &-img {
+      width: 90%;
+      height: 50vh;
+      display: grid;
+      grid-template-rows: 1fr 1fr;  /*you can use px, %, auto etc. here*/
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "left-top right-item" "left-bottom right-item";
+      grid-gap: 15px;
+      margin: 20px 0;
+
+      &-1 {
+        grid-area: left-top;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      
+      &-2 {
+        grid-area: left-bottom;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      
+      &-3 {
+        grid-area: right-item;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  padding-top: 25vh; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+  backdrop-filter: blur(3.5px);
+  z-index: 20;
+  color: white;
+
+  /* Modal Content */
+  &__content {
+    background-color: $primary-color;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    height: 35vh;
+  }
+
+  &__title {
+    font-family: 'Ubuntu Medium';
+    font-size: 20px;
+    font-weight: 500;
+    margin: 50px 0 20px 0;
+  }
+
+  &__label {
+    font-family: 'Ubuntu Medium';
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 15px;
+  }
+
+  &__input {
+    border: none;
+    width: 100%;
+    border-radius: 30px;
+    height: 30px;
+    outline: none;
+    padding: 15px;
+
+    &:focus {
+    border: none;
+
+    }
+  }
+
+  /* The Close Button */
+  &__close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__close:hover,
+  &__close:focus {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 768px) {
+  // .hero__intro-img-1 {
+  //   visibility: hidden;
+  //   clear: both;
+  //   float: left;
+  //   margin: 10px auto 5px 20px;
+  //   width: 28%;
+  //   display: none;
+  // }
+
+  // .header__nav__mobile {
+  //     display: block;
+  // }
+  // .header__nav__list {
+  //     margin: 0;
+  //     background: $primary-color;
+  //     color: white;
+  //     position: absolute;
+  //     right: -100%;
+  //     top: 60px;
+  //     width: 100%;
+  //     height: calc(100% - 60px);
+  //     flex-direction: column;
+  //     justify-content: start;
+  //     padding: 0;
+  //     transition: all 400ms;
+  //     z-index: 10;
+  // }
+  // .header__nav__item {
+  //     text-align: center;
+  //     margin-top: 80px;
+  // }
+
+  // .nav-active {
+  //     right: 0;
+  // }
+
+  // .fixed-position {
+  //   position: fixed;
+  // }
+}
