@@ -620,6 +620,7 @@ label {
   }
   .modal__content {
     width: 60%;
+    height: 50vh;
   }
   .modal__close {
     font-size: 32px;

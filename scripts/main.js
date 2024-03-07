@@ -1,52 +1,68 @@
-const mobile = document.querySelector('.header__nav__mobile i');
-const nav = document.querySelector('.header__nav__list');
-const items = document.querySelectorAll('.header__nav__item');
+const headerMenuIcon = document.querySelector('.header__nav__mobile i');
+const headerNavList = document.querySelector('.header__nav__list');
+const headerMenuItems = document.querySelectorAll('.header__nav__item');
 const body = document.querySelector('body');
 const modal = document.querySelector(".modal");
 const btnRegister = document.querySelector(".hero__intro-hello-btn");
-const span = document.querySelector(".modal__close");
+const modalCloseSpan = document.querySelector(".modal__close");
 const nameValue = document.querySelector('.modal__title');
 const inputValue = document.querySelector('.modal__input');
 
-function toggleNav() {
-  mobile.classList.toggle('fa-bars');
-  mobile.classList.toggle('fa-times');
-  nav.classList.toggle('nav-active');
-  nav.classList.toggle('nav-desactive');
-  body.classList.toggle("fixed-position");
+function toggleHeaderMenuIcon() {
+  headerMenuIcon.classList.toggle('fa-bars');
+  headerMenuIcon.classList.toggle('fa-times');
+}
 
-  if (nav.classList.contains('nav-desactive')) {
-    setTimeout(() => {
-      nav.style.display = 'none';
-    }, 800);
-  } 
-  if (nav.classList.contains('nav-active')) {
-    nav.style.display = 'block';
+function toggleNavState() {
+  headerNavList.classList.toggle('nav-active');
+  headerNavList.classList.toggle('nav-desactive');
+
+  if (headerNavList.classList.contains('nav-desactive')) {
+    headerNavList.style.display = 'none'; 
+  } else {
+    headerNavList.style.display = 'block';
   }
-  
-  items.forEach(element => {
+}
+
+function toggleBodyPosition() {
+  body.classList.toggle("fixed-position");
+}
+
+function toggleMenuItemClasses() {
+  headerMenuItems.forEach(element => {
     element.classList.toggle('nav-active-item');
   });
 }
 
-mobile.addEventListener('click', function() {
-    toggleNav();
-});
+function toggleNav() {
+  toggleHeaderMenuIcon();
+  toggleNavState();
+  toggleBodyPosition();
+  toggleMenuItemClasses();
+}
 
-btnRegister.onclick = function() {
+headerMenuIcon.addEventListener('click', toggleNav);
+
+function handleRegisterButtonClick() {
   modal.style.display = "block";
 }
 
-span.onclick = function() {
+btnRegister.addEventListener('click', handleRegisterButtonClick);
+
+function handleModalClose() {
   modal.style.display = "none";
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+modalCloseSpan.addEventListener('click', handleModalClose);
+
+function updateWelcomeMessage() {
+  nameValue.textContent = `Welcome, ${inputValue.value}`;
 }
 
-function inputName() {
-  nameValue.innerHTML = `Welcome, ${inputValue.value}`
-}
+inputValue.addEventListener('keyup', updateWelcomeMessage);
+
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    handleModalClose();
+  }
+});
