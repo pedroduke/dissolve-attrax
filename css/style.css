@@ -164,59 +164,6 @@ label {
   font-size: 2em;
 }
 
-@-webkit-keyframes show {
-  from {
-    right: -100%;
-  }
-  to {
-    right: 0;
-  }
-}
-
-@keyframes show {
-  from {
-    right: -100%;
-  }
-  to {
-    right: 0;
-  }
-}
-@-webkit-keyframes hide {
-  from {
-    right: 0;
-  }
-  to {
-    right: -100%;
-  }
-}
-@keyframes hide {
-  from {
-    right: 0;
-  }
-  to {
-    right: -100%;
-  }
-}
-.nav-active-item {
-  right: -100%;
-}
-
-.nav-active {
-  right: 0;
-  -webkit-animation: show 0.6s;
-          animation: show 0.6s;
-}
-
-.nav-desactive {
-  right: -100%;
-  -webkit-animation: hide 0.6s;
-          animation: hide 0.6s;
-}
-
-.fixed-position {
-  position: fixed;
-}
-
 .hero__intro {
   height: 100vh;
   display: -webkit-box;
@@ -410,7 +357,6 @@ label {
   position: fixed;
   padding-top: 25vh;
   left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -419,6 +365,8 @@ label {
           backdrop-filter: blur(3.5px);
   z-index: 20;
   color: white;
+  -webkit-animation: modal 400ms ease both;
+          animation: modal 400ms ease both;
 }
 .modal__content {
   background-color: #F36F21;
@@ -452,6 +400,26 @@ label {
 .modal__close:hover, .modal__close:focus {
   text-decoration: none;
   cursor: pointer;
+}
+
+.nav-active-item {
+  right: -100%;
+}
+
+.nav-active {
+  right: 0;
+  -webkit-animation: show 0.6s;
+          animation: show 0.6s;
+}
+
+.nav-desactive {
+  right: -100%;
+  -webkit-animation: hide 0.6s;
+          animation: hide 0.6s;
+}
+
+.fixed-position {
+  position: fixed;
 }
 
 @media screen and (min-width: 768px) {
@@ -669,5 +637,57 @@ label {
     width: 80%;
     display: block;
     margin: 0 auto;
+  }
+}
+@-webkit-keyframes show {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes show {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+@-webkit-keyframes hide {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+@keyframes hide {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+@-webkit-keyframes modal {
+  from {
+    opacity: 0;
+    top: 1000px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes modal {
+  from {
+    opacity: 0;
+    top: 1000px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
   }
 }/*# sourceMappingURL=style.css.map */

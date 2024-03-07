@@ -59,7 +59,9 @@ label {
   font-size: 18px;
   font-weight: 400;
 }
+// CSS Reset end
 
+// Header
 .header {
   height: 60px;
   width: 100%;
@@ -98,7 +100,6 @@ label {
       background: $primary-color;
       color: white;
       position: absolute;
-      // right: 0;
       top: 60px;
       width: 100%;
       height: calc(100vh - 60px);
@@ -153,43 +154,9 @@ label {
     }
   }
 }
+// Header End
 
-@keyframes show {
-  from {
-    right: -100%;
-  }
-  to {
-    right: 0;
-  }
-}
-
-@keyframes hide {
-  from {
-    right: 0;
-  }
-  to {
-    right: -100%;
-  }
-}
-
-.nav-active-item {
-  right: -100%;
-}
-
-.nav-active {
-  right: 0;
-  animation: show .6s;
-}
-
-.nav-desactive {
-  right: -100%;
-  animation: hide .6s;
-}
-
-.fixed-position {
-  position: fixed;
-}
-
+// Hero
 .hero {
   &__intro {
     height: 100vh;
@@ -362,7 +329,6 @@ label {
   position: fixed; 
   padding-top: 25vh; 
   left: 0;
-  top: 0;
   width: 100%; 
   height: 100%; 
   overflow: auto; 
@@ -370,6 +336,7 @@ label {
   backdrop-filter: blur(3.5px);
   z-index: 20;
   color: white;
+  animation: modal 400ms ease both;
 
   &__content {
     background-color: $primary-color;
@@ -380,16 +347,10 @@ label {
   }
 
   &__title {
-    // font-family: 'Ubuntu Medium';
-    // font-size: 20px;
-    // font-weight: 500;
     margin: 50px 0 20px 0;
   }
 
   &__label {
-    // font-family: 'Ubuntu Medium';
-    // font-size: 12px;
-    // font-weight: 500;
     margin-left: 15px;
   }
 
@@ -411,7 +372,6 @@ label {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    // transform: translate(100%, 0);
   }
 
   &__close:hover,
@@ -420,6 +380,28 @@ label {
     cursor: pointer;
   }
 }
+// Hero end
+
+// Special classes
+.nav-active-item {
+  right: -100%;
+}
+
+.nav-active {
+  right: 0;
+  animation: show .6s;
+}
+
+.nav-desactive {
+  right: -100%;
+  animation: hide .6s;
+}
+
+.fixed-position {
+  position: fixed;
+}
+
+// Media Queries
 @media screen and (min-width: 768px) {
 
   h1 {
@@ -640,5 +622,35 @@ label {
       display: block;
       margin : 0 auto;
     }
+  }
+}
+
+// Animations 
+@keyframes show {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes hide {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    top: 1000px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
   }
 }

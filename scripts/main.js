@@ -48,6 +48,5 @@ window.onclick = function(event) {
 }
 
 function inputName() {
-  console.log(nameValue)
   nameValue.innerHTML = `Welcome, ${inputValue.value}`
 }
