@@ -9,27 +9,27 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header" role="banner">
       <div class="header__container">
         <a href="#" class="header__logo">
           <img alt="Logo" src="images/logo.png">
         </a>
         <div class="header__menu">
           <div class="header__icons">
-            <div class="header__menu__search ">
+            <div class="header__menu__search" aria-label="search">
               <i aria-hidden="true" class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div class="header__menu__favorite">
+            <div class="header__menu__favorite" aria-label="favorites">
               <i aria-hidden="true" class="fa-regular fa-heart"></i>
             </div>
           </div>
-          <nav class="header__nav">
+          <nav class="header__nav" role="navigation" aria-labelledby="main-navigation">
             <ul class="header__nav__list nav-desactive">
               <li class="header__nav__item"><a href="#">About us</a></li>
               <li class="header__nav__item"><a href="#">Our Stories</a></li>
               <li class="header__nav__item"><a href="#">Our values</a></li>
             </ul>
-            <div class="header__nav__mobile">
+            <div class="header__nav__mobile" role="button" aria-label="open menu">
               <i aria-hidden="true" class="fas fa-bars"></i>
             </div>
           </nav>
@@ -37,27 +37,27 @@
       </div>
     </header>
 
-    <main class="hero">
-      <section class="hero__intro">
+    <main class="hero" role="main" aria-label="hero section">
+      <section class="hero__intro" aria-label="introduction">
         <div class="hero__intro-img">
           <img alt="hero image 1" class="hero__intro-img-1" src="images/husna-miskandar-FC4z3l4sUYc-unsplash.jpg" />
           <img alt="hero image 2" class="hero__intro-img-2" src="images/naassom-azevedo-Q_Sei-TqSlc-unsplash.jpg" />
-          <div class="hero__intro-img-square"></div>
+          <div class="hero__intro-img-square" aria-hidden="true"></div>
         </div>
-        <div class="hero__intro-hello">
+        <div class="hero__intro-hello" aria-label="greetings">
           <h1 class="hero__intro-hello-title">Working together to make a better tomorrow!</h1>
           <h2 class="hero__intro-hello-text">Breaking down the barriers and opening opportunities.</h2>
-          <button class="hero__intro-hello-btn">Click here to register your interest</button>
+          <button class="hero__intro-hello-btn" aria-label="register button">Click here to register your interest</button>
         </div>
       </section>
 
-      <section class="hero__info">
-        <div class="hero__info-hello">
+      <section class="hero__info" aria-label="additional information">
+        <div class="hero__info-hello" aria-label="greetings">
           <h2 class="hero__info-hello-title">There's more than just one way to make a difference.</h2>
           <p class="hero__info-hello-text">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus..</p>
-          <button class="hero__info-hello-btn">Find out more here</button>
+          <button class="hero__info-hello-btn" aria-label="find out more">Find out more here</button>
         </div>
-        <div class="hero__info-img">
+        <div class="hero__info-img" aria-label="images">
           <img alt="hero image 3" src="images/benigno-hoyuela-72zsd_fnxYc-unsplash.jpg" class="hero__info-img-1" />
           <img alt="hero image 4" src="images/emmanuel-akinte-Yx4v3sWfeAo-unsplash.jpg" class="hero__info-img-2" />
           <img alt="hero image 5" src="images/mike-baker-3Y366aqddJ0-unsplash.jpg" class="hero__info-img-3" />
@@ -66,12 +66,12 @@
       </section>
     </main>
 
-    <div id="modal" class="modal">
+    <div id="modal" class="modal" role="dialog" aria-labelledby="modal" aria-hidden="true">
       <div class="modal__content">
-        <span class="modal__close">&times;</span>
+        <span class="modal__close" aria-label="close">&times;</span>
         <h1 class="modal__title">Welcome, </h1>
         <label class="modal__label" for="name">Please enter your name</label>
-        <input class="modal__input" type="text" name="name" id="name" />
+        <input class="modal__input" type="text" name="name" id="name" aria-label="name"/>
       </div>
     </div>
 

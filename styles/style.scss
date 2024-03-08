@@ -323,7 +323,9 @@ label {
     }
   }
 }
+// Hero end
 
+// Modal
 .modal {
   display: none; 
   position: fixed; 
@@ -380,7 +382,7 @@ label {
     cursor: pointer;
   }
 }
-// Hero end
+// Modal end
 
 // Special classes
 .nav-active-item {
@@ -416,6 +418,7 @@ label {
     font-weight: 400;
   }
 
+  // Header 
   .header {
     height: 70px;
 
@@ -477,7 +480,9 @@ label {
       }
     }
   }
+  // Header end
 
+  // Hero
   .hero {
     &__intro {
       flex-direction: row;
@@ -595,7 +600,9 @@ label {
       }
     }
   }
+  // Hero end
 
+  // Modal
   .modal {
     &__content {
       width: 60%;
@@ -625,6 +632,7 @@ label {
     }
   }
 }
+// Modal end
 
 // Animations 
 @keyframes show {
